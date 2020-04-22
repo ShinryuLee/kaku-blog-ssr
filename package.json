@@ -11,12 +11,19 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
     "cross-env": "^5.2.0",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "nuxt": "^2.0.0",
+    "vue-spinner": "^1.0.3"
   },
   "devDependencies": {
     "nodemon": "^1.18.9",
     "@nuxtjs/vuetify": "^1.0.0"
+  },
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": 80
+    }
   }
 }
