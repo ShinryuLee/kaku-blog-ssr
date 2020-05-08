@@ -25,11 +25,16 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '~assets/global.scss'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    {
+      src: '@/plugins/vuetify.js',
+      ssr: true
+    }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -41,25 +46,26 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/vuetify'
   ],
+  manifest: {
+    name: 'KL国际物流转运',
+    theme_color: '#00a040',
+    background_color: '#e9ecef',
+    display: 'standalone',
+    Scope: '/',
+    start_url: '/',
+    splash_pages: null
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
   */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: false,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
+    defaultAssets: {
+      icons: {
+        iconfont: 'md' || 'fa' || 'mdi'
       }
     }
   },
@@ -70,7 +76,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   }
 }

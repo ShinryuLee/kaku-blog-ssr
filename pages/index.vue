@@ -17,9 +17,9 @@
           欢迎进入kaku家物流系统
         </v-card-title>
         <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
+          <p>疫情期间不停运输</p>
           <p>
-            For more information on Vuetify, check out the <a
+            杂货线路圆通物流一单到底 <a
               href="https://vuetifyjs.com"
               target="_blank"
             >
@@ -27,7 +27,7 @@
             </a>.
           </p>
           <p>
-            If you have questions, please join the official <a
+            服装线路顺丰物流一单到底 <a
               href="https://chat.vuetifyjs.com/"
               target="_blank"
               title="chat"
@@ -36,24 +36,24 @@
             </a>.
           </p>
           <p>
-            Find a bug? Report it on the github <a
+            杂货每公斤1400日元 <a
               href="https://github.com/vuetifyjs/vuetify/issues"
               target="_blank"
               title="contribute"
             >
-              issue board
+              服装每公斤1200日元
             </a>.
           </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
+          <p>有任何需求请联系微信sx340287132</p>
           <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
+            <em><small>&mdash; KL通商</small></em>
           </div>
           <hr class="my-3">
           <a
             href="https://nuxtjs.org/"
             target="_blank"
           >
-            Nuxt Documentation
+            KL通商
           </a>
           <br>
           <a
@@ -68,9 +68,9 @@
           <v-btn
             color="primary"
             nuxt
-            to="/inspire"
+           
           >
-            Continue
+            下一步
           </v-btn>
         </v-card-actions>
       </v-card>

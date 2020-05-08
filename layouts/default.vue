@@ -1,21 +1,22 @@
 <template>
   <v-app class="app">
     <v-overlay v-if="loading" color="#F8F9FA" opacity="1" z-index="9999">
-      <div class="loader">
-        <scale-loader color="#00A040" />
-      </div>
+      <scale-loader class="steal accent-3" />
     </v-overlay>
     <v-content>
       <v-container v-if="userAuth" class="fill-height" fluid>
-        <v-row align="center" justify="center">
-          <v-col cols="12" sm="8" md="4">
+        <v-row class="ml-0" align="center" justify="center" >
+          <v-col cols="12" sm="4" md="6" align="center" justify="center">
             <LoginForm @func="login"></LoginForm>
           </v-col>
         </v-row>
       </v-container>
       <v-container v-else class="mainpage">
-        <v-app-bar fixed app flat src="/bgimg.png">
+        <v-app-bar class="primary" dark fixed app flat >
           <v-toolbar-title>KL通商</v-toolbar-title>
+          <v-spacer/>
+          <v-btn  v-if="userAuth"  rounded flat outlined @click="login">Login</v-btn>
+          <v-btn class="primary" v-else color="primary" rounded flat outlined @click="logout">Logout</v-btn>
         </v-app-bar>
         <nuxt></nuxt>
       </v-container>
@@ -35,24 +36,27 @@ export default {
   data: function() {
     return {
       loading: true,
-      userAuth: true,
+      userAuth: true
     };
   },
   mounted() {
     this.loading = false;
   },
   methods: {
+    logout() {
+      this.userAuth = true;
+    },
     login(data) {
       this.userAuth = data;
     }
   }
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .app {
-  max-width: 1440px;
+  max-width: 100%;
   margin: 0 auto;
-  background-color: inherit !important;
+  background-color:$gray-4 !important;
 }
 
 .loader {
@@ -64,7 +68,7 @@ export default {
   transform: translateY(-50%) translateX(-50%);
 }
 
-.mainpage{
+.mainpage {
   margin-top: 0px;
   padding-top: 0px;
 }

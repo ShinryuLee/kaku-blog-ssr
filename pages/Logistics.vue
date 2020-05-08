@@ -74,6 +74,7 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   data: () => ({
     dialog: false,
@@ -133,15 +134,7 @@ export default {
   },
   methods: {
     initialize() {
-      this.postpackagelist = [
-        {
-          name: "Frozen Yogurt",
-          calories: 159,
-          fat: 6.0,
-          carbs: 24,
-          protein: 4.0
-        }
-      ];
+      this.loadlist();
     },
     editItem(item) {
       this.editedIndex = this.postpackagelist.indexOf(item);
@@ -167,6 +160,19 @@ export default {
         this.postpackagelist.push(this.editedItem);
       }
       this.close();
+    },
+    async loadlist() {
+      this.loading=true;
+      this.postpackagelist=[];
+      axios
+      .get("http://localhost:8080/api/orderlist")
+      .then(response =>{
+        this.postpackagelist = response.data;
+      })
+      .catch(error =>{
+        alert(error);
+      });
+      this.loading=false;
     }
   }
 };
